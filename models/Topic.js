@@ -4,10 +4,6 @@ const TopicSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Users",
-  },
   createdAt: {
     type: Date,
     default: Date.now,

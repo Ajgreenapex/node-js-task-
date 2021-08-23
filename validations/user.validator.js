@@ -13,7 +13,28 @@ const updateUserPayload = Joi.object({
 });
 
 const createTopicPayload = Joi.object({
-  title: Joi.string().max(50).trim().required,
+  title: Joi.string().max(50).trim().required(),
 });
-
-module.exports = { createUserPayload, updateUserPayload, createTopicPayload };
+const createQuestionPayload = Joi.object({
+  question: Joi.string().max(150).required(),
+  titleId: Joi.string().trim().required(),
+});
+const updateQuestionPayload = Joi.object({
+  question: Joi.string().max(150).required(),
+});
+const createAnswerPayload = Joi.object({
+  answer: Joi.string().required(),
+  questionId: Joi.string().trim().required(),
+});
+const updateAnswerPayload = Joi.object({
+  answer: Joi.string().required(),
+});
+module.exports = {
+  createUserPayload,
+  updateUserPayload,
+  createTopicPayload,
+  createQuestionPayload,
+  createAnswerPayload,
+  updateQuestionPayload,
+  updateAnswerPayload,
+};

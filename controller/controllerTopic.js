@@ -27,6 +27,7 @@ const createTopic = async (req, res) => {
   const topic = req.body;
   try {
     await schema.createTopicPayload.validateAsync(topic);
+
     const topicDocument = await Topic.create(topic);
     //   const topicDocument = new Topic(topic);
     //   await topicDocument.save();

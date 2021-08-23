@@ -26,7 +26,8 @@ if (process.env.NODE_ENV === "development") {
 //Routes
 app.use("/", require("./routes/index"));
 app.use("/topics", require("./routes/topics"));
-// app.use("/blogs", require("./routes/blogs"));
+app.use("/questions", require("./routes/question"));
+app.use("/answers", require("./routes/answer"));
 
 //Port
 const PORT = process.env.PORT || 3000;
